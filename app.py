@@ -3,14 +3,14 @@ app = Flask(__name__)
 
 INFOS = [
     {
-    "id" = "1",
-    "title" = "To do for first",
-    "worker" = "Tim",
+    "id" : "1",
+    "title" : "To do for first",
+    "worker" : "Tim",
 },
     {
-    "id" = "2"
-    "title" = "To do for second"
-    "worker" = "jim"
+    "id" : "2",
+    "title" : "To do for second",
+    "worker" : "jim",
 }
 ]
 

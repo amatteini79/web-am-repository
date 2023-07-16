@@ -26,9 +26,11 @@
             aspernatur eos sequi autem.
         </p>
         <h2 class="text-center mb-2 mt-2">Open element</h2>
-            <p class="lead">
-                {{various}}
-            </p>
+            <div>
+                {% for item in various %}
+                <div>{{various['title']}}</div>
+                {% endfor%}
+            </div>
     </div>
     
     <div class="text-center mt-4">
