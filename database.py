@@ -5,7 +5,10 @@ engine = create_engine(db_connection_string)
 
 with engine.connect() as conn:
         result = conn.execute(text("select * from jobs"))
-        result_all = result.all()
-        first_row = dict(result_all[0])
-        print(first_row)
+        result_dict = []
+        for row in result.all():
+                result_dict.append(row._asdict())
+        print(result_dict)
+
+        
 
