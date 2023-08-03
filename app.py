@@ -1,4 +1,7 @@
 from flask import Flask, render_template
+from database import engine
+from sqlalchemy import Text
+
 app = Flask(__name__)
 
 INFOS = [
@@ -13,6 +16,12 @@ INFOS = [
     "worker" : "jim",
 }
 ]
+
+with engine.connect() as conn:
+    result = conn.execute(text("select * from jobs"))
+    result_dict = []
+    for row in result.all():
+        result_dict.append(row._asdict())
 
 @app.route("/")
 def HelloWorld():
