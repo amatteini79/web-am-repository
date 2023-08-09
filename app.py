@@ -12,7 +12,7 @@ def HelloWorld():
 @app.route("/job/<id>")
 def show_job(id):
     job = load_job_from_db(id)
-    return jsonify(job)
+    return render_template ('jobpage.html', single_job=job)
 
 app.run(host='127.0.0.1', port=5000, debug=True)
 
