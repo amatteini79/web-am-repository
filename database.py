@@ -22,6 +22,6 @@ def load_job_from_db(id):
     if len(rows) == 0:
         return None
     else:
-        return (rows[0]._asdict)
+        return (rows[0]._asdict())
         
 
