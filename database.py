@@ -17,11 +17,11 @@ def load_jobs_from_db():
 
 def load_job_from_db(id):
     with engine.connect() as conn:
-        result = conn.execute(text("select * from jobs where id = :val"),val=id)
+        result = conn.execute(text("select * from jobs where id = id"))
     rows = result.all()
     if len(rows) == 0:
         return None
     else:
-        return dict(rows[0])
+        return (rows[0]._asdict)
         
 
