@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        { % include 'bootstrap.html' % }
+        {% include 'bootstrap.html' %}
         <title>{{single_job.title}} - WebAM</title>
     </head>
     <body>
-        <h3>Title</h3>
-        <p>{{single_job.title}}</p>
-        <h3>Location</h3>
-        <p>{{single_job.location}}</p>
-        <h3>Salary</h3>
-        <p>{{single_job.currency}} {{single_job.salary}}</p>
+        {% include 'nav.html' %}
+            <h3>Title</h3>
+            <p>{{single_job.title}}</p>
+            <h3>Location</h3>
+            <p>{{single_job.location}}</p>
+            <h3>Salary</h3>
+            <p>{{single_job.currency}} {{single_job.salary}}</p>
+            <h3>Requirements</h3>
+            <p>{{single_job.requirements}}</p>
+        {% include 'footer.html' %}
 
     </body>
 </html>
