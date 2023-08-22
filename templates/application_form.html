@@ -1,5 +1,5 @@
 <h4>Application Form</h4>
-    <form action="/job/{{single_job.['id']}}/apply">
+    <form action="/job/{{single_job['id']}}/apply" method="post">
         <div class="mb-2">
             <label>Full Name</label><br>    
             <input type="text" name="full_name" placeholder="Bruce Wayne">
@@ -12,5 +12,15 @@
             <label>LinkedIn</label><br> 
             <input type="text" name="LinkedIn" placeholder="https://linkdin.com/name">
         </div>
-        <input type="submit" name="submit">
+        
+        <div class="mb-2">
+            <label>Education</label><br> 
+            <textarea name="education"></textarea>
+        </div>
+        <div class="mb-2">
+            <label>Work Experience</label><br> 
+            <textarea name="work_experience"></textarea>
+        </div>
+
+        <input type="submit">
     </form>
