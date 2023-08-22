@@ -7,15 +7,20 @@
     <body>
         {% include 'nav.html' %}
         {% include 'banner.html' %}
-        <h4>FullName</h4>
-        <div>{{application['full_name']}}</div>
-        <h4>Email</h4>
-        <div>{{application['email']}}</div>
-        <h4>Linkedin</h4>
-        <div>{{application['linkedin']}}</div>
-        <h4>education</h4>
-        <div>{{application['education']}}</div>
-        <h4>Work Experience</h4>
-        <div>{{application['work_experience']}}</div>
+        <div class="container">
+            <h1 class="text-center mb-2 mt-2">WebDEV</h1>
+            <p>Application for <b>{{job['title']}}</b> is Submitted</p>
+            <b>FullName</b>
+            <div class="mb-2">{{application['full_name']}}</div>
+            <b>Email</b>
+            <div class="mb-2">{{application['email']}}</div>
+            <b>Linkedin</b>
+            <div class="mb-2">{{application['linkedin']}}</div>
+            <b>Education</b>
+            <div class="mb-2">{{application['education']}}</div>
+            <b>Work Experience</b>
+            <div class="mb-2">{{application['work_experience']}}</div>
+            {% include 'footer.html' %}
+        </div>
     </body>
 </html>
