@@ -8,13 +8,19 @@
         {% include 'nav.html' %}
         {% include 'banner.html' %}
         <div class="container">
-            <h1 class="text-center mb-2 mt-2">Web Developer</h1>
+            <h1 class="text-center mb-2 mt-2">{{single_job.title}}</h1>
             <h3>Title</h3>
             <p>{{single_job.title}}</p>
             <h3>Location</h3>
             <p>{{single_job.location}}</p>
             <h3>Salary</h3>
             <p>{{single_job.currency}} {{single_job.salary}}</p>
+            <h3>Responsibilities</h3>
+            <ul>
+                {% for line in single_job.responsibilities.split("\n") %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
             <h3>Requirements</h3>
             <p>{{single_job.requirements}}</p>
         {% include 'footer.html' %}
