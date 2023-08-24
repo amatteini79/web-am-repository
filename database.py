@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, insert
 
 
 
@@ -25,13 +25,10 @@ def load_job_from_db(id):
     else:
         return (rows[0]._asdict())
     
-def add_application_to_db(job_id, application):
+def add_application_to_db(id, data):
     with engine.connect() as conn:
-        query = text("INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience) VALUES (:job_id, :full_name, :linkedin, :education, :work_experience)")
-    conn.execute(query,
-                 job_id=job_id, 
-                 full_name=application['full_name'],      
-                 email=application['email'],
-                 linkedin_url=application['linkedin'],
-                 education=application['education'],
-                 work_experience=application['work_experience'],)
+        parameters = {'job_id' : id, 'full_name' : data['full_name'], 'email' : data['email']}
+        print(parameters)
+        stmt = text("INSERT INTO applications (job_id, full_name, email) VALUES (:job_id, :full_name, :email)")
+        conn.execute(stmt, parameters)
+    conn.commit()
