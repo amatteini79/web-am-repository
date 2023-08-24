@@ -31,4 +31,4 @@ def add_application_to_db(id, data):
         print(parameters)
         stmt = text("INSERT INTO applications (job_id, full_name, email) VALUES (:job_id, :full_name, :email)")
         conn.execute(stmt, parameters)
-    conn.commit()
+        conn.commit()
