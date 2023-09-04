@@ -2,15 +2,15 @@
     <form action="/job/{{single_job['id']}}/apply" method="post">
         <div class="mb-2">
             <label>Full Name</label><br>    
-            <input type="text" name="full_name" placeholder="Bruce Wayne">
+            <input type="text" required name="full_name" placeholder="Bruce Wayne">
         </div>
         <div class="mb-2">
             <label>email</label><br> 
-            <input type="text" name="email" placeholder="bruce@wayne.it">
+            <input type="email" required name="email" placeholder="bruce@wayne.it">
         </div>
         <div class="mb-2">
             <label>LinkedIn</label><br> 
-            <input type="text" name="linkedin" placeholder="https://linkdin.com/name">
+            <input type="url" name="linkedin" placeholder="https://linkdin.com/name">
         </div>
         
         <div class="mb-2">
